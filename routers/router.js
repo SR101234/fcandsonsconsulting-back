@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
 });
 
 
-router.route("/send").post(control.create_query);
+router.route("/send_info").post(control.create_query);
 
 
 

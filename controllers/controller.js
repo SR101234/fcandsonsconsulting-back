@@ -3,19 +3,15 @@ const nodemailer = require("nodemailer");
 const create_query = async (req, res) => {
   try {
     const data = req.body;
-
+    
     // ----------- VALIDATION -----------
     // Validate Email Format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(data.email)) {
       return res.status(400).json({ message: "Invalid Email Address" });
     }
-
+    
     // Validate Mobile Number (10 - 15 digits)
-    const phoneRegex = /^[0-9]{10,12}$/;
-    if (!phoneRegex.test(data.phone)) {
-      return res.status(400).json({ message: "Invalid Phone Number (Enter 10)" });
-    }
     // ----------- VALIDATION END -----------
 
     // ----------- NODEMAILER -----------
@@ -31,10 +27,10 @@ const create_query = async (req, res) => {
       from: process.env.EMAIL,
       to: "fcandsonsconsulting@gmail.com",
       subject: "Web Portal Query Received",
-      text: `Full Name: ${data.fullname}\n
+      text: `Full Name: ${data.name}\n
 Email: ${data.email}\n
 Phone: ${data.phone}\n
-Service: ${data.service}\n
+Service: ${data.subject}\n
 Message: ${data.message}`
     };
 
