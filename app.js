@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 
 const corsOption ={
-    origin:"https://fcandsonsconsulting.vercel.app",
+    origin:"https://www.fcandsonsconsulting.com/",
     methods: "GET, PUT, PATCH, DELETE, POST, HEAD",
     credentials:true,
     allowedHeaders: ["Content-Type", "Authorization"]
