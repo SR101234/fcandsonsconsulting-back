@@ -25,7 +25,7 @@ const create_query = async (req, res) => {
 
     var mailOptions = {
       from: process.env.EMAIL,
-      to: "fcandsonsconsulting@gmail.com",
+      to: "customersupport@fcandsonsconsulting.com",
       subject: "Web Portal Query Received",
       text: `Full Name: ${data.name}\n
 Email: ${data.email}\n
