@@ -1,8 +1,11 @@
 const nodemailer = require("nodemailer");
 
 const create_query = async (req, res) => {
+
+  console.log(req.body);
   try {
     const data = req.body;
+    
     
     // ----------- VALIDATION -----------
     // Validate Email Format
